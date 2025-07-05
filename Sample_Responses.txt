@@ -1,0 +1,105 @@
+Command: python main.py mcq "Python Programming Basics" 2
+Response:
+{
+  "questions": [
+    {
+      "question": "What is the output of the following code snippet?\n\nprint(5 + 3 * 2)",
+      "options": ["A) 16", "B) 11", "C) 10", "D) 13"],
+      "correct_answer": "D) 13",
+      "explanation": "The multiplication operator (*) has higher precedence than the addition operator (+), so 3 * 2 is computed first resulting in 6. Then, 5 + 6 equals 11."
+    },
+    {
+      "question": "Which of the following is not a valid variable name in Python?",
+      "options": ["A) my_variable", "B) 1st_number", "C) variable1", "D) _myVariable"],
+      "correct_answer": "B) 1st_number",
+      "explanation": "Variable names in Python cannot start with a number. Therefore, '1st_number' is not valid."
+    }
+  ]
+}
+
+---
+
+Command: python main.py mcq "Python Loops" 3
+Response:
+{
+  "questions": [
+    {
+      "question": "What is the purpose of a for loop in Python?",
+      "options": ["A. To iterate over a sequence of elements", "B. To conditionally execute a block of code", "C. To define a function", "D. To perform arithmetic operations"],
+      "correct_answer": "A",
+      "explanation": "A for loop is used to iterate over a sequence of elements, such as a list or a string"
+    },
+    {
+      "question": "Which keyword is used to exit a loop prematurely in Python?",
+      "options": ["A. return", "B. break", "C. continue", "D. exit"],
+      "correct_answer": "B",
+      "explanation": "The 'break' keyword is used to exit a loop prematurely before it has completed all iterations"
+    },
+    {
+      "question": "What is the difference between a while loop and a for loop in Python?",
+      "options": ["A. A while loop can only iterate a fixed number of times", "B. A for loop can only iterate over lists", "C. A while loop continues iterating until a condition is met", "D. A for loop is more efficient than a while loop"],
+      "correct_answer": "C",
+      "explanation": "A while loop continues iterating until a specified condition becomes false, while a for loop iterates over a sequence of elements"
+    }
+  ]
+}
+
+---
+
+Command: python main.py lesson "Python Programming Basics"
+Response:
+{
+  "title": "Python Programming Basics Lesson Plan",
+  "subject": "Python Programming Basics",
+  "learning_objectives": ["Understand basic Python syntax", "Learn how to create variables and perform operations", "Gain knowledge of conditional statements and loops"],
+  "main_topics": ["Introduction to Python", "Variables and Data Types", "Control Structures"],
+  "activities": [
+    {
+      "name": "Hands-on Coding Exercise",
+      "description": "Students will solve coding exercises in Python to practice what they have learned",
+      "duration": "30 minutes"
+    },
+    {
+      "name": "Group Discussion",
+      "description": "Students will discuss their solutions to coding exercises and share insights",
+      "duration": "20 minutes"
+    },
+    {
+      "name": "Mini Project",
+      "description": "Students will work on a small project to implement Python concepts learned in class",
+      "duration": "40 minutes"
+    }
+  ],
+  "assessment": "Students will be assessed through a quiz on Python basics and evaluation of their mini project.",
+  "materials_needed": ["Computers with Python installed", "Coding exercises handouts", "Project guidelines"]
+}
+
+---
+
+Command: python main.py lesson "Algebra"
+Response:
+{
+  "title": "Introduction to Algebra",
+  "subject": "Algebra",
+  "learning_objectives": ["Students will understand basic algebraic concepts", "Students will be able to solve algebraic equations", "Students will be able to graph linear equations"],
+  "main_topics": ["Basic Algebraic Expressions", "Solving Equations", "Graphing Linear Equations"],
+  "activities": [
+    {
+      "name": "Algebraic Expressions Matching Game",
+      "description": "Students will match algebraic expressions with their corresponding numerical values",
+      "duration": "20 minutes"
+    },
+    {
+      "name": "Equation Solving Practice",
+      "description": "Students will solve a series of algebraic equations individually or in groups",
+      "duration": "30 minutes"
+    },
+    {
+      "name": "Graphing Linear Equations Activity",
+      "description": "Students will graph linear equations on a coordinate plane and identify key features such as slope and y-intercept",
+      "duration": "25 minutes"
+    }
+  ],
+  "assessment": "Assess student understanding through a quiz on algebraic expressions, equation solving, and graphing linear equations",
+  "materials_needed": ["Algebraic expressions cards", "Whiteboard and markers"]
+} 

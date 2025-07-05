@@ -1,0 +1,24 @@
+{
+  "server_url": "http://localhost:5000",
+  "tools": [
+    {
+      "name": "generate_mcqs",
+      "description": "Generate multiple-choice questions for a given topic.",
+      "endpoint": "/mcq",
+      "method": "POST",
+      "parameters": [
+        {"name": "topic", "type": "string", "required": true},
+        {"name": "num", "type": "integer", "required": false, "default": 5}
+      ]
+    },
+    {
+      "name": "generate_lesson_plan",
+      "description": "Generate a lesson plan for a given topic.",
+      "endpoint": "/lesson",
+      "method": "POST",
+      "parameters": [
+        {"name": "topic", "type": "string", "required": true}
+      ]
+    }
+  ]
+} 

@@ -1,0 +1,36 @@
+# Sample Commands and Responses
+
+# 1. (Optional) Create and activate a virtual environment
+# python -m venv venv
+# .\venv\Scripts\activate  # On Windows
+
+# 2. Install required dependencies
+pip install -r requirements.txt
+
+# 3. (Optional) If you need to upgrade a package (e.g., openai)
+pip install --upgrade openai
+
+# 4. Run the FastAPI MCP server (default port 5000)
+uvicorn server:app --reload --port 5000
+
+# 5. Test the /mcq endpoint using PowerShell (Invoke-RestMethod)
+$body = @{ "topic" = "Photosynthesis"; "num" = 3 }
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/mcq" -Method Post -Body ($body | ConvertTo-Json) -ContentType "application/json"
+
+# 6. Test the /lesson endpoint using PowerShell (Invoke-RestMethod)
+$body = @{ "topic" = "Photosynthesis" }
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/lesson" -Method Post -Body ($body | ConvertTo-Json) -ContentType "application/json"
+
+# 7. (Alternative) Test endpoints using curl (in Command Prompt or Git Bash)
+# For /mcq endpoint:
+curl -X POST "http://127.0.0.1:5000/mcq" -H "Content-Type: application/json" -d "{\"topic\": \"Photosynthesis\", \"num\": 3}"
+# For /lesson endpoint:
+curl -X POST "http://127.0.0.1:5000/lesson" -H "Content-Type: application/json" -d "{\"topic\": \"Photosynthesis\"}"
+
+# 8. (Optional) Stop the server
+# Press CTRL+C in the terminal where the server is running
+
+# 9. (Optional) Deactivate the virtual environment
+# deactivate
+
+# Replace the sample data (topic, num_questions, grade_level) as needed for your tests. 

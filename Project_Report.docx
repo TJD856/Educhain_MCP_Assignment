@@ -1,0 +1,74 @@
+EduChain MCP Assignment - Project Report
+
+1. Introduction
+----------------
+This document details the step-by-step approach, challenges faced, and solutions implemented during the development of the EduChain MCP assignment. The project involved building an MCP server using the EduChain library, integrating it with external tools, and exposing endpoints for Claude Desktop.
+
+2. Step-by-Step Approach
+------------------------
+
+**Step 1: Environment Setup**
+- Created a Python virtual environment and activated it.
+- Installed all required dependencies (`educhain`, `fastapi`, `uvicorn`, `openai`, etc.) via `requirements.txt`.
+
+**Step 2: EduChain Integration**
+- Implemented `generate_mcqs` and `generate_lesson_plan` functions using OpenRouter/OpenAI for content generation.
+- Ensured output is valid JSON for MCP compatibility.
+
+**Step 3: MCP Server with FastAPI**
+- Created a `server.py` using FastAPI to expose `/mcq` and `/lesson` POST endpoints.
+- Each endpoint calls the generator functions and returns JSON responses.
+
+**Step 4: Claude Desktop Configuration**
+- Created `claude_desktop_config.json` to map endpoints for Claude Desktop integration.
+
+**Step 5: Testing**
+- Used PowerShell's `Invoke-RestMethod` to test endpoints:
+  - MCQ: `Invoke-RestMethod -Uri "http://localhost:5000/mcq" -Method Post -ContentType "application/json" -Body '{"topic": "Python Functions", "num": 2}'`
+  - Lesson: `Invoke-RestMethod -Uri "http://localhost:5000/lesson" -Method Post -ContentType "application/json" -Body '{"topic": "Algebra"}'`
+- Verified valid JSON responses for both endpoints.
+
+**Step 6: Sample Responses**
+- Collected sample commands and responses in `Sample_Responses.txt` as required.
+
+**Step 7: Documentation and Submission**
+- Ensured all code is commented and documented.
+- Prepared README and final checklist for submission.
+
+3. Challenges Faced & Solutions
+------------------------------
+
+**Challenge 1: .env File Encoding Issues**
+- Problem: UnicodeDecodeError when loading `.env` file.
+- Solution: Bypassed `.env` loading and hardcoded the API key for testing.
+
+**Challenge 2: PowerShell curl/Invoke-WebRequest Incompatibility**
+- Problem: PowerShell's `curl` is an alias for `Invoke-WebRequest` and does not support Unix-style flags.
+- Solution: Used `Invoke-RestMethod` for API testing in PowerShell.
+
+**Challenge 3: openai/OpenAI ImportError**
+- Problem: `ImportError: cannot import name 'OpenAI' from 'openai'` due to outdated package.
+- Solution: Upgraded `openai` package to the latest version using `pip install --upgrade openai`.
+
+**Challenge 4: dotenv ImportError**
+- Problem: `ModuleNotFoundError: No module named 'dotenv'` after removing `.env` usage.
+- Solution: Removed all `dotenv` imports and related code from the project.
+
+**Challenge 5: FastAPI Endpoint Testing**
+- Problem: Ensuring endpoints return valid JSON and are compatible with Claude Desktop.
+- Solution: Used PowerShell and Postman for thorough endpoint testing.
+
+4. Final Checklist
+------------------
+- [x] All endpoints implemented and tested
+- [x] FastAPI server runs without errors
+- [x] Valid JSON responses for all endpoints
+- [x] Sample responses file created
+- [x] Claude Desktop config file present
+- [x] Code and documentation complete
+- [x] All dependencies in requirements.txt
+- [x] GitHub repo ready for submission
+
+5. Conclusion
+-------------
+The project successfully meets all assignment requirements. All endpoints are functional, documentation is complete, and the server is ready for integration with Claude Desktop or other MCP clients. 

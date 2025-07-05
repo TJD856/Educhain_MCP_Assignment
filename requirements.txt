@@ -1,0 +1,4 @@
+educhain
+python-dotenv
+fastapi
+uvicorn 
